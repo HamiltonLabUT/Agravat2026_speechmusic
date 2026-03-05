@@ -19,12 +19,10 @@ This repository contains code for preprocessing intracranial sEEG recordings, fi
   numpy, scipy, pandas, matplotlib, h5py,
   librosa (audio processing),
   pyvista, nibabel (brain surface visualization),
-  mplcursors (interactive scatter plots)
-  
+  mplcursors (interactive scatter plots). 
   R:
   lme4, lmerTest (linear mixed-effects models),
   ggplot2, ggeffects, patchwork (visualization),
   readxl, dplyr, tidyr (data wrangling). 
-
   Ridge regression utilities (ridge_.py, utils.py) are from the MNE-Python-based Hamilton Lab ridge regression toolbox.
 

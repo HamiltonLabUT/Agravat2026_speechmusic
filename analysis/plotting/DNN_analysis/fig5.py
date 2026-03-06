@@ -116,7 +116,7 @@ for ax, panel in zip(axes, panels):
             z_fit   = np.polyfit(log_age, y_v, 1)
             x_line  = np.linspace(age_v.min(), age_v.max(), 200)
             ax.plot(x_line, np.poly1d(z_fit)(np.log(x_line)),
-                c=color, linewidth=1.2, linestyle='--', alpha=0.95, zorder=4)
+                c=color, linewidth=1.2, linestyle='-', alpha=0.95, zorder=4)
 
             r, pval = stats.pearsonr(log_age, y_v)
             n = len(sub)

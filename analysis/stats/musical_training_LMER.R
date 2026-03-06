@@ -4,106 +4,159 @@ library(dplyr)
 library(tidyr)
 library(readxl)
 
-electrode_data_path <- "/Users/rajviagravat/Documents/Hamilton_Lab/Code/speechMusic/analysis/plotting/DNN_analysis/DNN_analysis_allmodels_02_26.csv"
-training_data_path  <- "/Users/rajviagravat/Documents/Hamilton_Lab/Code/speechMusic/analysis/plotting/music_training.xlsx"
-output_dir          <- "/Users/rajviagravat/Library/CloudStorage/Box-Box/Figures/speechmusic/DNN_analysis/musical_training"
+ELECTRODE_DATA_PATH <- "/Users/rajviagravat/Documents/Hamilton_Lab/Code/speechMusic/analysis/plotting/DNN_analysis/DNN_analysis_allmodels_03_05.csv"
+TRAINING_DATA_PATH <- "/Users/rajviagravat/Documents/Hamilton_Lab/Code/speechMusic/analysis/plotting/music_training.xlsx"
+OUTPUT_DIR <- "/Users/rajviagravat/Documents/Hamilton_Lab/Code/Agravat2026_speechmusic/analysis/stats/stats_results"
 
-dir.create(output_dir, showWarnings = FALSE, recursive = TRUE)
+SUBJ_ID_COL <- "subj_id"
+REGION_COL <- "short_anat"
+AGE_COL <- "age"
 
-# Column names
-subj_id_col <- "subj_id"
-region_col  <- "short_anat"
-age_col     <- "age"
-mixed_col   <- "speech_music_corrs_DNN"
-speech_col  <- "speech_only_corrs_DNN"
-music_col   <- "music_only_corrs_DNN"
-stacked_col <- "stacked_corrs_DNN"
+MIXED_COL <- "speech_music_corrs_DNN"
+SPEECH_COL <- "speech_only_corrs_DNN"
+MUSIC_COL <- "music_only_corrs_DNN"
+STACKED_COL <- "stacked_corrs_DNN"
 
-# Load data 
-elec_data     <- read.csv(electrode_data_path)
-training_data <- read_excel(training_data_path, skip = 1)
-colnames(training_data) <- c("subject_id", "age", "sex", "has_training",
-                              "instrument", "duration", "frequency")
+dir.create(OUTPUT_DIR, showWarnings = FALSE, recursive = TRUE)
 
-# Clean and merge 
-elec_data$subject_id     <- trimws(as.character(elec_data[[subj_id_col]]))
-training_data$subject_id <- trimws(as.character(training_data$subject_id))
+sink(file.path(OUTPUT_DIR, "LMER_musical_training_NEW.txt"), split = TRUE)
 
-training_data$musical_training <- ifelse(
-  toupper(trimws(training_data$has_training)) == "YES", 1, 0
-)
+elec_data <- read.csv(ELECTRODE_DATA_PATH)
 
-data <- elec_data %>%
-  left_join(training_data %>% select(subject_id, musical_training),
-            by = "subject_id") %>%
-  filter(!!sym(region_col) %in% c("STG", "STS", "MTG"),
-         !is.na(musical_training))
+training_data <- read_excel(TRAINING_DATA_PATH, skip = 1) |>
+  setNames(c(
+    "subject_id",
+    "age",
+    "sex",
+    "has_training",
+    "instrument",
+    "duration",
+    "frequency"
+  )) |>
+  mutate(
+    subject_id = trimws(as.character(subject_id)),
+    musical_training = ifelse(
+      toupper(trimws(has_training)) == "YES",
+      1,
+      0
+    )
+  )
 
-# Fisher Z-transform and center age 
-data$z_mixed   <- atanh(data[[mixed_col]])
-data$z_speech  <- atanh(data[[speech_col]])
-data$z_music   <- atanh(data[[music_col]])
-data$z_stacked <- atanh(data[[stacked_col]])
+elec_data <- elec_data |>
+  mutate(subject_id = trimws(as.character(.data[[SUBJ_ID_COL]])))
 
-data$age_centered      <- scale(data[[age_col]], center = TRUE, scale = FALSE)[, 1]
-data$speech_music_diff <- data$z_speech - data$z_music
+data <- elec_data |>
+  left_join(
+    training_data |> select(subject_id, musical_training),
+    by = "subject_id"
+  ) |>
+  filter(
+    .data[[REGION_COL]] %in% c("STG", "STS", "MTG"),
+    !is.na(musical_training)
+  )
 
-data_long <- data %>%
+cat("Electrodes:", nrow(data), "\n")
+cat("Subjects:", n_distinct(data$subject_id), "\n")
+
+subj_training <- data |>
+  distinct(subject_id, musical_training)
+
+cat("Trained:", sum(subj_training$musical_training == 1), "\n")
+cat("Untrained:", sum(subj_training$musical_training == 0), "\n")
+
+data <- data |>
+  mutate(
+    z_mixed  = atanh(.data[[MIXED_COL]]),
+    z_speech = atanh(.data[[SPEECH_COL]]),
+    z_music  = atanh(.data[[MUSIC_COL]]),
+    z_stacked = atanh(.data[[STACKED_COL]]),
+    age_centered = scale(.data[[AGE_COL]], center = TRUE, scale = FALSE)[,1],
+    region = factor(.data[[REGION_COL]]),                  # <-- ADDED
+    speech_music_diff = z_speech - z_music                 # <-- MOVED HERE
+  )
+
+data_long <- data |>
   pivot_longer(
-    cols = c(z_mixed, z_speech, z_music, z_stacked),
+    cols = starts_with("z_"),
     names_to = "model_type",
     values_to = "z_correlation",
     names_prefix = "z_"
-  ) %>%
+  ) |>
   mutate(
-    model_type = factor(model_type, levels = c("mixed", "speech", "music", "stacked")),
-    region     = factor(!!sym(region_col))
+    model_type = factor(model_type,
+                        levels = c("mixed", "speech", "music", "stacked")),
+    region = factor(.data[[REGION_COL]])
   )
 
-sink(file.path(output_dir, "LMER_musical_training.txt"), split = TRUE)
+# MAIN MODEL
 
-cat(sprintf("Electrodes: %d from %d subjects\n", nrow(data), n_distinct(data$subject_id)))
-cat(sprintf("  Trained:   %d subjects\n", n_distinct(data$subject_id[data$musical_training == 1])))
-cat(sprintf("  Untrained: %d subjects\n", n_distinct(data$subject_id[data$musical_training == 0])))
+cat("\nMAIN MODEL\n")
 
-cat("\n\n=== Main Model: model_type * musical_training * age_centered ===\n")
 main_model <- lmer(
-  z_correlation ~ model_type * musical_training * age_centered + (1 | subject_id),
+  z_correlation ~ model_type * musical_training * age_centered +
+    (1 | subject_id),
   data = data_long
 )
-print(summary(main_model))
 
-training_coef <- summary(main_model)$coefficients["musical_training", ]
-cat(sprintf("\nMain effect of training: β = %.4f, t = %.2f, p = %.4f\n",
-            training_coef["Estimate"], training_coef["t value"], training_coef["Pr(>|t|)"]))
+main_summary <- summary(main_model)
+print(main_summary)
 
-# Region-specific models 
-cat("\n\n=== Region-Specific Models ===\n")
-for (region in c("STG", "STS", "MTG")) {
-  cat(sprintf("\n--- %s ---\n", region))
+coef_main <- main_summary$coefficients["musical_training",]
 
+cat("\nMain training effect:",
+    "β =", round(coef_main["Estimate"], 4),
+    "t =", round(coef_main["t value"], 2),
+    "p =", round(coef_main["Pr(>|t|)"], 4),
+    "\n")
+
+# REGION MODELS
+
+cat("\nREGION MODELS\n")
+
+for (r in c("STG", "STS", "MTG")) {
+  
+  cat("\n---", r, "---\n")
+  
   model_region <- lmer(
-    z_correlation ~ model_type * musical_training + age_centered + (1 | subject_id),
-    data    = filter(data_long, !!sym(region_col) == region),
+    z_correlation ~ model_type * musical_training +
+      age_centered +
+      (1 | subject_id),
+    data = data_long |> filter(.data[[REGION_COL]] == r),
     control = lmerControl(optimizer = "bobyqa")
   )
-  print(summary(model_region))
-
-  training_coef <- summary(model_region)$coefficients["musical_training", ]
-  cat(sprintf("Training effect: β = %.4f, t = %.2f, p = %.4f\n",
-              training_coef["Estimate"], training_coef["t value"], training_coef["Pr(>|t|)"]))
+  
+  s <- summary(model_region)
+  coef_r <- s$coefficients["musical_training",]
+  
+  cat(
+    "β =", round(coef_r["Estimate"], 4),
+    "t =", round(coef_r["t value"], 2),
+    "p =", round(coef_r["Pr(>|t|)"], 4),
+    "\n"
+  )
 }
 
-# Speech-music selectivity model 
-cat("\n\n=== Speech-Music Selectivity Model ===\n")
+# SELECTIVITY MODEL
+
+cat("\nSELECTIVITY MODEL\n")
+
 selectivity_model <- lmer(
-  speech_music_diff ~ musical_training + age_centered + region + (1 | subject_id),
+  speech_music_diff ~ musical_training +
+    age_centered +
+    region +
+    (1 | subject_id),
   data = data
 )
-print(summary(selectivity_model))
 
-training_coef <- summary(selectivity_model)$coefficients["musical_training", ]
-cat(sprintf("\nTraining effect on selectivity: β = %.4f, t = %.2f, p = %.4f\n",
-            training_coef["Estimate"], training_coef["t value"], training_coef["Pr(>|t|)"]))
+s_sel <- summary(selectivity_model)
+print(s_sel)
+
+coef_sel <- s_sel$coefficients["musical_training",]
+
+cat("\nSelectivity training effect:",
+    "β =", round(coef_sel["Estimate"], 4),
+    "t =", round(coef_sel["t value"], 2),
+    "p =", round(coef_sel["Pr(>|t|)"], 4),
+    "\n")
 
 sink()

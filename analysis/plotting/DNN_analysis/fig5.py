@@ -39,7 +39,7 @@ for col in music_df.columns:
     unique_vals = music_df[col].astype(str).str.upper().unique()
     if 'YES' in unique_vals and 'NO' in unique_vals:
         training_col = col
-        print(f"✓ Training column: '{col}'")
+        print(f" Training column: '{col}'")
         break
 
 if training_col is None:
@@ -53,6 +53,7 @@ rois = ['STG', 'STS', 'MTG']
 d = data[data['short_anat'].isin(rois)].copy()
 
 # Fisher Z-transform correlations
+d['mixed_z'] = np.arctanh(np.clip(d['speech_music_corrs_DNN'], -1 + eps, 1 - eps))
 d['speech_z'] = np.arctanh(np.clip(d['speech_only_corrs_DNN'], -1 + eps, 1 - eps))
 d['music_z']  = np.arctanh(np.clip(d['music_only_corrs_DNN'],  -1 + eps, 1 - eps))
 d['diff_z']   = d['speech_z'] - d['music_z']
@@ -84,10 +85,16 @@ panels = [
         'ylim':    (-0.2, 0.6),
         # 'title':   'Music only',
     },
+    {
+        'y_col':   'mixed_z',
+        'ylabel':  'Mixed representation\nz(r$_{mixed}$)',
+        'ylim':    (-0.2, 0.6),
+    },
 ]
 
 # fig, axes = plt.subplots(1, 3, figsize=(18, 5), sharey=False)
-fig, axes = plt.subplots(1, 2, figsize=(8, 4), sharey=False)
+# fig, axes = plt.subplots(1, 2, figsize=(8, 4), sharey=False)
+fig, axes = plt.subplots(1, 3, figsize=(12, 4), sharey=False)
 fig.subplots_adjust(wspace=0.35)
 
 for ax, panel in zip(axes, panels):

@@ -1,0 +1,6 @@
+Musical Training Age Comparison - Mann-Whitney U Test
+Trained:   N = 9, mean = 12.8 years, SD = 4.7, range = 7-19
+Untrained: N = 10, mean = 12.4 years, SD = 5.6, range = 6-21
+
+Mann-Whitney U = 44.5, p = 1.0000
+Rank-biserial correlation r = 0.011

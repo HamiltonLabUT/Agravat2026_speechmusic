@@ -1,0 +1,1230 @@
+
+============================================================
+REGION: STG 
+============================================================
+
+Model 1: Combined (Reference: z_speech )
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: correlation ~ model_type * age_c + sex + (1 | subj_id)
+   Data: melted_data
+
+REML criterion at convergence: -1913.6
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.4183 -0.5789 -0.1283  0.4006  4.6185 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ subj_id  (Intercept) 0.005858 0.07654 
+ Residual             0.010979 0.10478 
+Number of obs: 1248, groups:  subj_id, 51
+
+Fixed effects:
+                            Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)                1.154e-01  1.737e-02  5.566e+01   6.645 1.37e-08 ***
+model_typez_mixed         -2.293e-02  8.458e-03  1.198e+03  -2.711  0.00680 ** 
+model_typez_music         -6.716e-02  8.654e-03  1.201e+03  -7.760 1.81e-14 ***
+model_typez_stacked        6.129e-03  8.329e-03  1.196e+03   0.736  0.46196    
+age_c                      8.903e-02  2.901e-02  6.522e+01   3.069  0.00313 ** 
+sexM                       3.211e-02  2.285e-02  4.684e+01   1.405  0.16656    
+model_typez_mixed:age_c   -1.669e-02  1.865e-02  1.197e+03  -0.895  0.37080    
+model_typez_music:age_c   -4.466e-02  1.885e-02  1.198e+03  -2.370  0.01796 *  
+model_typez_stacked:age_c  8.847e-03  1.819e-02  1.194e+03   0.486  0.62683    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+              (Intr) mdl_typz_mx mdl_typz_ms mdl_typz_s age_c  sexM   mdl_typz_mx:_ mdl_typz_ms:_
+mdl_typz_mx   -0.230                                                                             
+mdl_typz_ms   -0.231  0.486                                                                      
+mdl_typz_st   -0.236  0.497       0.488                                                          
+age_c         -0.036  0.024       0.021       0.023                                              
+sexM          -0.698 -0.003       0.008       0.003      0.021                                   
+mdl_typz_mx:_  0.023 -0.108      -0.040      -0.036     -0.307 -0.006                            
+mdl_typz_ms:_  0.026 -0.041      -0.116      -0.038     -0.301 -0.013  0.492                     
+mdl_typz_s:_   0.023 -0.037      -0.038      -0.092     -0.313 -0.008  0.502         0.497       
+Type III Analysis of Variance Table with Satterthwaite's method
+                  Sum Sq Mean Sq NumDF   DenDF F value    Pr(>F)    
+model_type       0.96008 0.32003     3 1195.71 29.1487 < 2.2e-16 ***
+age_c            0.08758 0.08758     1   48.04  7.9772  0.006877 ** 
+sex              0.02168 0.02168     1   46.84  1.9746  0.166559    
+model_type:age_c 0.10352 0.03451     3 1194.11  3.1431  0.024462 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Model 1: Combined (Reference: z_mixed )
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: correlation ~ model_type * age_c + sex + (1 | subj_id)
+   Data: melted_data
+
+REML criterion at convergence: -1913.6
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.4183 -0.5789 -0.1283  0.4006  4.6185 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ subj_id  (Intercept) 0.005858 0.07654 
+ Residual             0.010979 0.10478 
+Number of obs: 1248, groups:  subj_id, 51
+
+Fixed effects:
+                            Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)                9.247e-02  1.748e-02  5.700e+01   5.291 2.01e-06 ***
+model_typez_speech         2.293e-02  8.458e-03  1.198e+03   2.711 0.006800 ** 
+model_typez_music         -4.423e-02  8.678e-03  1.193e+03  -5.096 4.03e-07 ***
+model_typez_stacked        2.906e-02  8.416e-03  1.193e+03   3.453 0.000574 ***
+age_c                      7.233e-02  2.928e-02  6.750e+01   2.471 0.016019 *  
+sexM                       3.211e-02  2.285e-02  4.684e+01   1.405 0.166559    
+model_typez_speech:age_c   1.669e-02  1.865e-02  1.197e+03   0.895 0.370802    
+model_typez_music:age_c   -2.796e-02  1.890e-02  1.192e+03  -1.480 0.139264    
+model_typez_stacked:age_c  2.554e-02  1.839e-02  1.192e+03   1.389 0.165165    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+              (Intr) mdl_typz_sp mdl_typz_m mdl_typz_st age_c  sexM   mdl_typz_sp:_ mdl_typz_m:_
+mdl_typz_sp   -0.255                                                                            
+mdl_typz_ms   -0.243  0.490                                                                     
+mdl_typz_st   -0.250  0.513       0.495                                                         
+age_c         -0.043  0.045       0.039      0.045                                              
+sexM          -0.696  0.003       0.011      0.007       0.017                                  
+mdl_typz_sp:_  0.029 -0.108      -0.066     -0.073      -0.333  0.006                           
+mdl_typz_m:_   0.035 -0.066      -0.141     -0.068      -0.314 -0.007  0.496                    
+mdl_typz_st:_  0.035 -0.073      -0.068     -0.127      -0.329 -0.001  0.518         0.504      
+Type III Analysis of Variance Table with Satterthwaite's method
+                  Sum Sq Mean Sq NumDF   DenDF F value    Pr(>F)    
+model_type       0.96008 0.32003     3 1195.77 29.1487 < 2.2e-16 ***
+age_c            0.08758 0.08758     1   48.04  7.9772  0.006877 ** 
+sex              0.02168 0.02168     1   46.84  1.9746  0.166559    
+model_type:age_c 0.10352 0.03451     3 1194.13  3.1431  0.024462 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Model 1: Combined (Reference: z_music )
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: correlation ~ model_type * age_c + sex + (1 | subj_id)
+   Data: melted_data
+
+REML criterion at convergence: -1913.6
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.4183 -0.5789 -0.1283  0.4006  4.6185 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ subj_id  (Intercept) 0.005858 0.07654 
+ Residual             0.010979 0.10478 
+Number of obs: 1248, groups:  subj_id, 51
+
+Fixed effects:
+                           Estimate Std. Error        df t value Pr(>|t|)    
+(Intercept)               4.825e-02  1.752e-02 5.763e+01   2.754  0.00787 ** 
+model_typez_mixed         4.423e-02  8.678e-03 1.193e+03   5.096 4.03e-07 ***
+model_typez_speech        6.716e-02  8.654e-03 1.201e+03   7.760 1.81e-14 ***
+model_typez_stacked       7.329e-02  8.596e-03 1.193e+03   8.526  < 2e-16 ***
+age_c                     4.437e-02  2.945e-02 6.906e+01   1.507  0.13647    
+sexM                      3.211e-02  2.285e-02 4.684e+01   1.405  0.16656    
+model_typez_mixed:age_c   2.796e-02  1.890e-02 1.192e+03   1.480  0.13926    
+model_typez_speech:age_c  4.466e-02  1.885e-02 1.198e+03   2.370  0.01796 *  
+model_typez_stacked:age_c 5.350e-02  1.858e-02 1.193e+03   2.880  0.00405 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+              (Intr) mdl_typz_m mdl_typz_sp mdl_typz_st age_c  sexM   mdl_typz_m:_ mdl_typz_sp:_
+mdl_typz_mx   -0.253                                                                            
+mdl_typz_sp   -0.265  0.524                                                                     
+mdl_typz_st   -0.260  0.525      0.534                                                          
+age_c         -0.046  0.052      0.054       0.053                                              
+sexM          -0.688 -0.011     -0.008      -0.005       0.013                                  
+mdl_typz_m:_   0.035 -0.141     -0.077      -0.076      -0.330  0.007                           
+mdl_typz_sp:_  0.032 -0.076     -0.116      -0.081      -0.343  0.013  0.512                    
+mdl_typz_st:_  0.037 -0.076     -0.081      -0.132      -0.339  0.005  0.519        0.528       
+Type III Analysis of Variance Table with Satterthwaite's method
+                  Sum Sq Mean Sq NumDF   DenDF F value    Pr(>F)    
+model_type       0.96008 0.32003     3 1195.79 29.1487 < 2.2e-16 ***
+age_c            0.08758 0.08758     1   48.04  7.9772  0.006877 ** 
+sex              0.02168 0.02168     1   46.84  1.9746  0.166559    
+model_type:age_c 0.10352 0.03451     3 1194.14  3.1431  0.024462 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Model 1: Combined (Reference: z_stacked )
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: correlation ~ model_type * age_c + sex + (1 | subj_id)
+   Data: melted_data
+
+REML criterion at convergence: -1913.6
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.4183 -0.5789 -0.1283  0.4006  4.6185 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ subj_id  (Intercept) 0.005858 0.07654 
+ Residual             0.010979 0.10478 
+Number of obs: 1248, groups:  subj_id, 51
+
+Fixed effects:
+                           Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)               1.215e-01  1.740e-02  5.601e+01   6.986 3.64e-09 ***
+model_typez_music        -7.329e-02  8.596e-03  1.193e+03  -8.526  < 2e-16 ***
+model_typez_mixed        -2.906e-02  8.416e-03  1.193e+03  -3.453 0.000574 ***
+model_typez_speech       -6.129e-03  8.329e-03  1.196e+03  -0.736 0.461957    
+age_c                     9.787e-02  2.901e-02  6.513e+01   3.374 0.001252 ** 
+sexM                      3.211e-02  2.285e-02  4.684e+01   1.405 0.166559    
+model_typez_music:age_c  -5.350e-02  1.858e-02  1.193e+03  -2.880 0.004049 ** 
+model_typez_mixed:age_c  -2.554e-02  1.839e-02  1.192e+03  -1.389 0.165165    
+model_typez_speech:age_c -8.847e-03  1.819e-02  1.194e+03  -0.486 0.626830    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+              (Intr) mdl_typz_ms mdl_typz_mx mdl_typz_s age_c  sexM   mdl_typz_ms:_ mdl_typz_mx:_
+mdl_typz_ms   -0.233                                                                             
+mdl_typz_mx   -0.232  0.480                                                                      
+mdl_typz_sp   -0.243  0.477       0.490                                                          
+age_c         -0.038  0.031       0.035       0.035                                              
+sexM          -0.696  0.005      -0.007      -0.003      0.016                                   
+mdl_typz_ms:_  0.028 -0.132      -0.057      -0.052     -0.296 -0.005                            
+mdl_typz_mx:_  0.027 -0.056      -0.127      -0.054     -0.302  0.001  0.477                     
+mdl_typz_s:_   0.021 -0.051      -0.054      -0.092     -0.314  0.008  0.475         0.480       
+Type III Analysis of Variance Table with Satterthwaite's method
+                  Sum Sq Mean Sq NumDF   DenDF F value    Pr(>F)    
+model_type       0.96008 0.32003     3 1195.75 29.1487 < 2.2e-16 ***
+age_c            0.08758 0.08758     1   48.04  7.9772  0.006877 ** 
+sex              0.02168 0.02168     1   46.84  1.9746  0.166559    
+model_type:age_c 0.10352 0.03451     3 1194.12  3.1431  0.024462 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+============================================================
+REGION: STS 
+============================================================
+
+Model 1: Combined (Reference: z_speech )
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: correlation ~ model_type * age_c + sex + (1 | subj_id)
+   Data: melted_data
+
+REML criterion at convergence: -1568.6
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.1735 -0.5616 -0.1383  0.4667  4.1814 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ subj_id  (Intercept) 0.005875 0.07665 
+ Residual             0.005558 0.07455 
+Number of obs: 735, groups:  subj_id, 41
+
+Fixed effects:
+                            Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)                 0.080309   0.019695  37.288660   4.078  0.00023 ***
+model_typez_mixed          -0.015337   0.007885 685.912068  -1.945  0.05217 .  
+model_typez_music          -0.038679   0.007926 686.496783  -4.880 1.32e-06 ***
+model_typez_stacked         0.011488   0.007664 684.808051   1.499  0.13433    
+age_c                      -0.004123   0.030666  41.295517  -0.134  0.89371    
+sexM                        0.041671   0.025405  32.837250   1.640  0.11050    
+model_typez_mixed:age_c    -0.010973   0.018105 685.569894  -0.606  0.54466    
+model_typez_music:age_c    -0.024767   0.018459 687.983133  -1.342  0.18013    
+model_typez_stacked:age_c  -0.001281   0.017253 684.925969  -0.074  0.94084    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+              (Intr) mdl_typz_mx mdl_typz_ms mdl_typz_s age_c  sexM   mdl_typz_mx:_ mdl_typz_ms:_
+mdl_typz_mx   -0.184                                                                             
+mdl_typz_ms   -0.182  0.480                                                                      
+mdl_typz_st   -0.190  0.493       0.493                                                          
+age_c          0.061  0.009       0.004       0.006                                              
+sexM          -0.731 -0.007      -0.010      -0.007     -0.026                                   
+mdl_typz_mx:_  0.009 -0.061      -0.014      -0.012     -0.256 -0.002                            
+mdl_typz_ms:_  0.002 -0.015      -0.098      -0.013     -0.247  0.004  0.443                     
+mdl_typz_s:_   0.005 -0.013      -0.015      -0.072     -0.269  0.000  0.468         0.463       
+Type III Analysis of Variance Table with Satterthwaite's method
+                   Sum Sq  Mean Sq NumDF  DenDF F value    Pr(>F)    
+model_type       0.251150 0.083717     3 684.82 15.0619 1.673e-09 ***
+age_c            0.001179 0.001179     1  33.10  0.2121    0.6482    
+sex              0.014954 0.014954     1  32.84  2.6904    0.1105    
+model_type:age_c 0.012420 0.004140     3 685.25  0.7449    0.5256    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Model 1: Combined (Reference: z_mixed )
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: correlation ~ model_type * age_c + sex + (1 | subj_id)
+   Data: melted_data
+
+REML criterion at convergence: -1568.6
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.1735 -0.5616 -0.1383  0.4667  4.1814 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ subj_id  (Intercept) 0.005875 0.07665 
+ Residual             0.005558 0.07455 
+Number of obs: 735, groups:  subj_id, 41
+
+Fixed effects:
+                            Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)                 0.064972   0.019823  38.089161   3.278 0.002239 ** 
+model_typez_speech          0.015337   0.007885 685.912068   1.945 0.052166 .  
+model_typez_music          -0.023342   0.008063 684.243352  -2.895 0.003912 ** 
+model_typez_stacked         0.026825   0.007827 683.913057   3.427 0.000647 ***
+age_c                      -0.015096   0.031374  45.004729  -0.481 0.632726    
+sexM                        0.041671   0.025405  32.837250   1.640 0.110498    
+model_typez_speech:age_c    0.010973   0.018105 685.569894   0.606 0.544661    
+model_typez_music:age_c    -0.013793   0.019303 684.991996  -0.715 0.475128    
+model_typez_stacked:age_c   0.009693   0.018253 684.054924   0.531 0.595579    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+              (Intr) mdl_typz_sp mdl_typz_m mdl_typz_st age_c  sexM   mdl_typz_sp:_ mdl_typz_m:_
+mdl_typz_sp   -0.215                                                                            
+mdl_typz_ms   -0.201  0.506                                                                     
+mdl_typz_st   -0.209  0.524       0.511                                                         
+age_c          0.053  0.026       0.022      0.026                                              
+sexM          -0.729  0.007      -0.003      0.000      -0.026                                  
+mdl_typz_sp:_  0.015 -0.061      -0.045     -0.049      -0.327  0.002                           
+mdl_typz_m:_   0.011 -0.043      -0.120     -0.044      -0.293  0.006  0.515                    
+mdl_typz_st:_  0.015 -0.047      -0.046     -0.102      -0.318  0.002  0.550         0.514      
+Type III Analysis of Variance Table with Satterthwaite's method
+                   Sum Sq  Mean Sq NumDF  DenDF F value    Pr(>F)    
+model_type       0.251150 0.083717     3 684.83 15.0619 1.673e-09 ***
+age_c            0.001179 0.001179     1  33.10  0.2121    0.6482    
+sex              0.014954 0.014954     1  32.84  2.6904    0.1105    
+model_type:age_c 0.012420 0.004140     3 685.27  0.7449    0.5256    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Model 1: Combined (Reference: z_music )
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: correlation ~ model_type * age_c + sex + (1 | subj_id)
+   Data: melted_data
+
+REML criterion at convergence: -1568.6
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.1735 -0.5616 -0.1383  0.4667  4.1814 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ subj_id  (Intercept) 0.005875 0.07665 
+ Residual             0.005558 0.07455 
+Number of obs: 735, groups:  subj_id, 41
+
+Fixed effects:
+                            Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)                 0.041630   0.019845  38.250984   2.098  0.04259 *  
+model_typez_mixed           0.023342   0.008063 684.243352   2.895  0.00391 ** 
+model_typez_speech          0.038679   0.007926 686.496783   4.880 1.32e-06 ***
+model_typez_stacked         0.050167   0.007856 683.617506   6.386 3.15e-10 ***
+age_c                      -0.028889   0.031649  46.492036  -0.913  0.36606    
+sexM                        0.041671   0.025405  32.837250   1.640  0.11050    
+model_typez_mixed:age_c     0.013793   0.019303 684.991997   0.715  0.47513    
+model_typez_speech:age_c    0.024767   0.018459 687.983134   1.342  0.18013    
+model_typez_stacked:age_c   0.023486   0.018531 684.059142   1.267  0.20545    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+              (Intr) mdl_typz_m mdl_typz_sp mdl_typz_st age_c  sexM   mdl_typz_m:_ mdl_typz_sp:_
+mdl_typz_mx   -0.206                                                                            
+mdl_typz_sp   -0.219  0.514                                                                     
+mdl_typz_st   -0.213  0.517      0.528                                                          
+age_c          0.039  0.052      0.053       0.052                                              
+sexM          -0.729  0.003      0.010       0.003      -0.023                                  
+mdl_typz_m:_   0.038 -0.120     -0.080      -0.080      -0.319 -0.006                           
+mdl_typz_sp:_  0.037 -0.082     -0.098      -0.086      -0.344 -0.004  0.541                    
+mdl_typz_st:_  0.036 -0.080     -0.084      -0.137      -0.334 -0.004  0.535        0.565       
+Type III Analysis of Variance Table with Satterthwaite's method
+                   Sum Sq  Mean Sq NumDF  DenDF F value    Pr(>F)    
+model_type       0.251150 0.083717     3 684.83 15.0619 1.673e-09 ***
+age_c            0.001179 0.001179     1  33.10  0.2121    0.6482    
+sex              0.014954 0.014954     1  32.84  2.6904    0.1105    
+model_type:age_c 0.012420 0.004140     3 685.27  0.7449    0.5256    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Model 1: Combined (Reference: z_stacked )
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: correlation ~ model_type * age_c + sex + (1 | subj_id)
+   Data: melted_data
+
+REML criterion at convergence: -1568.6
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.1735 -0.5616 -0.1383  0.4667  4.1814 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ subj_id  (Intercept) 0.005875 0.07665 
+ Residual             0.005558 0.07455 
+Number of obs: 735, groups:  subj_id, 41
+
+Fixed effects:
+                           Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)                0.091797   0.019729  37.378433   4.653 4.02e-05 ***
+model_typez_music         -0.050167   0.007856 683.617506  -6.386 3.15e-10 ***
+model_typez_mixed         -0.026825   0.007827 683.913057  -3.427 0.000647 ***
+model_typez_speech        -0.011488   0.007664 684.808052  -1.499 0.134329    
+age_c                     -0.005404   0.030875  42.256855  -0.175 0.861904    
+sexM                       0.041671   0.025405  32.837250   1.640 0.110498    
+model_typez_music:age_c   -0.023486   0.018531 684.059142  -1.267 0.205450    
+model_typez_mixed:age_c   -0.009693   0.018253 684.054924  -0.531 0.595579    
+model_typez_speech:age_c   0.001281   0.017253 684.925969   0.074 0.940844    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+              (Intr) mdl_typz_ms mdl_typz_mx mdl_typz_s age_c  sexM   mdl_typz_ms:_ mdl_typz_mx:_
+mdl_typz_ms   -0.184                                                                             
+mdl_typz_mx   -0.186  0.471                                                                      
+mdl_typz_sp   -0.199  0.479       0.482                                                          
+age_c          0.050  0.029       0.035       0.034                                              
+sexM          -0.733 -0.003       0.000       0.007     -0.025                                   
+mdl_typz_ms:_  0.019 -0.137      -0.055      -0.054     -0.258  0.004                            
+mdl_typz_mx:_  0.025 -0.055      -0.102      -0.056     -0.268 -0.002  0.449                     
+mdl_typz_s:_   0.023 -0.056      -0.057      -0.072     -0.291  0.000  0.470         0.481       
+Type III Analysis of Variance Table with Satterthwaite's method
+                   Sum Sq  Mean Sq NumDF  DenDF F value    Pr(>F)    
+model_type       0.251150 0.083717     3 684.82 15.0619 1.673e-09 ***
+age_c            0.001179 0.001179     1  33.10  0.2121    0.6482    
+sex              0.014954 0.014954     1  32.84  2.6904    0.1105    
+model_type:age_c 0.012420 0.004140     3 685.25  0.7449    0.5256    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+============================================================
+REGION: MTG 
+============================================================
+
+Model 1: Combined (Reference: z_speech )
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: correlation ~ model_type * age_c + sex + (1 | subj_id)
+   Data: melted_data
+
+REML criterion at convergence: -2680.7
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.9769 -0.5436 -0.1245  0.4237  6.6769 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ subj_id  (Intercept) 0.001136 0.03370 
+ Residual             0.004215 0.06492 
+Number of obs: 1071, groups:  subj_id, 40
+
+Fixed effects:
+                            Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)                6.359e-02  9.238e-03  5.539e+01   6.884 5.65e-09 ***
+model_typez_mixed         -7.718e-03  5.739e-03  1.044e+03  -1.345 0.178944    
+model_typez_music         -2.178e-02  5.931e-03  1.051e+03  -3.673 0.000252 ***
+model_typez_stacked        7.164e-03  5.516e-03  1.041e+03   1.299 0.194341    
+age_c                      3.864e-03  1.640e-02  6.756e+01   0.236 0.814478    
+sexM                       1.866e-02  1.183e-02  3.883e+01   1.578 0.122733    
+model_typez_mixed:age_c    2.533e-02  1.359e-02  1.043e+03   1.864 0.062569 .  
+model_typez_music:age_c    5.155e-03  1.380e-02  1.048e+03   0.373 0.708868    
+model_typez_stacked:age_c  9.192e-03  1.300e-02  1.038e+03   0.707 0.479665    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+              (Intr) mdl_typz_mx mdl_typz_ms mdl_typz_s age_c  sexM   mdl_typz_mx:_ mdl_typz_ms:_
+mdl_typz_mx   -0.283                                                                             
+mdl_typz_ms   -0.292  0.468                                                                      
+mdl_typz_st   -0.298  0.488       0.482                                                          
+age_c         -0.085  0.062       0.072       0.062                                              
+sexM          -0.678 -0.005       0.008       0.001      0.018                                   
+mdl_typz_mx:_  0.047 -0.150      -0.079      -0.073     -0.408 -0.002                            
+mdl_typz_ms:_  0.062 -0.079      -0.192      -0.076     -0.413 -0.014  0.500                     
+mdl_typz_s:_   0.049 -0.074      -0.076      -0.153     -0.422 -0.005  0.512         0.508       
+Type III Analysis of Variance Table with Satterthwaite's method
+                   Sum Sq  Mean Sq NumDF   DenDF F value    Pr(>F)    
+model_type       0.111269 0.037090     3 1040.19  8.7994 9.171e-06 ***
+age_c            0.003998 0.003998     1   37.96  0.9485    0.3363    
+sex              0.010493 0.010493     1   38.83  2.4893    0.1227    
+model_type:age_c 0.016425 0.005475     3 1038.35  1.2989    0.2734    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Model 1: Combined (Reference: z_mixed )
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: correlation ~ model_type * age_c + sex + (1 | subj_id)
+   Data: melted_data
+
+REML criterion at convergence: -2680.7
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.9769 -0.5436 -0.1245  0.4237  6.6769 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ subj_id  (Intercept) 0.001136 0.03370 
+ Residual             0.004215 0.06492 
+Number of obs: 1071, groups:  subj_id, 40
+
+Fixed effects:
+                            Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)                5.588e-02  9.397e-03  5.879e+01   5.946  1.6e-07 ***
+model_typez_speech         7.718e-03  5.739e-03  1.044e+03   1.345  0.17894    
+model_typez_music         -1.407e-02  6.020e-03  1.038e+03  -2.337  0.01965 *  
+model_typez_stacked        1.488e-02  5.697e-03  1.033e+03   2.612  0.00912 ** 
+age_c                      2.920e-02  1.648e-02  6.893e+01   1.771  0.08091 .  
+sexM                       1.866e-02  1.183e-02  3.883e+01   1.578  0.12273    
+model_typez_speech:age_c  -2.533e-02  1.359e-02  1.043e+03  -1.864  0.06257 .  
+model_typez_music:age_c   -2.018e-02  1.370e-02  1.035e+03  -1.473  0.14103    
+model_typez_stacked:age_c -1.614e-02  1.315e-02  1.032e+03  -1.227  0.21998    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+              (Intr) mdl_typz_sp mdl_typz_m mdl_typz_st age_c  sexM   mdl_typz_sp:_ mdl_typz_m:_
+mdl_typz_sp   -0.333                                                                            
+mdl_typz_ms   -0.318  0.492                                                                     
+mdl_typz_st   -0.330  0.535       0.504                                                         
+age_c         -0.083  0.062       0.066      0.063                                              
+sexM          -0.670  0.005       0.012      0.006       0.017                                  
+mdl_typz_sp:_  0.046 -0.150      -0.066     -0.080      -0.418  0.002                           
+mdl_typz_m:_   0.059 -0.070      -0.180     -0.075      -0.413 -0.013  0.488                    
+mdl_typz_st:_  0.050 -0.082      -0.073     -0.156      -0.430 -0.003  0.528         0.509      
+Type III Analysis of Variance Table with Satterthwaite's method
+                   Sum Sq  Mean Sq NumDF   DenDF F value   Pr(>F)    
+model_type       0.111269 0.037090     3 1040.63  8.7994 9.17e-06 ***
+age_c            0.003998 0.003998     1   37.96  0.9485   0.3363    
+sex              0.010493 0.010493     1   38.83  2.4893   0.1227    
+model_type:age_c 0.016425 0.005475     3 1038.33  1.2989   0.2734    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Model 1: Combined (Reference: z_music )
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: correlation ~ model_type * age_c + sex + (1 | subj_id)
+   Data: melted_data
+
+REML criterion at convergence: -2680.7
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.9769 -0.5436 -0.1245  0.4237  6.6769 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ subj_id  (Intercept) 0.001136 0.03370 
+ Residual             0.004215 0.06492 
+Number of obs: 1071, groups:  subj_id, 40
+
+Fixed effects:
+                            Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)                4.181e-02  9.409e-03  5.956e+01   4.444 3.91e-05 ***
+model_typez_mixed          1.407e-02  6.020e-03  1.038e+03   2.337 0.019647 *  
+model_typez_speech         2.178e-02  5.931e-03  1.051e+03   3.673 0.000252 ***
+model_typez_stacked        2.895e-02  5.839e-03  1.037e+03   4.958 8.33e-07 ***
+age_c                      9.019e-03  1.652e-02  7.006e+01   0.546 0.586725    
+sexM                       1.866e-02  1.183e-02  3.883e+01   1.578 0.122733    
+model_typez_mixed:age_c    2.018e-02  1.370e-02  1.035e+03   1.473 0.141027    
+model_typez_speech:age_c  -5.155e-03  1.380e-02  1.048e+03  -0.373 0.708868    
+model_typez_stacked:age_c  4.037e-03  1.332e-02  1.036e+03   0.303 0.761814    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+              (Intr) mdl_typz_m mdl_typz_sp mdl_typz_st age_c  sexM   mdl_typz_m:_ mdl_typz_sp:_
+mdl_typz_mx   -0.322                                                                            
+mdl_typz_sp   -0.344  0.539                                                                     
+mdl_typz_st   -0.339  0.539      0.561                                                          
+age_c         -0.088  0.084      0.089       0.088                                              
+sexM          -0.661 -0.012     -0.008      -0.007       0.006                                  
+mdl_typz_m:_   0.057 -0.180     -0.115      -0.113      -0.417  0.013                           
+mdl_typz_sp:_  0.060 -0.114     -0.192      -0.123      -0.426  0.014  0.512                    
+mdl_typz_st:_  0.062 -0.114     -0.124      -0.192      -0.436  0.010  0.526        0.541       
+Type III Analysis of Variance Table with Satterthwaite's method
+                   Sum Sq  Mean Sq NumDF   DenDF F value   Pr(>F)    
+model_type       0.111269 0.037090     3 1040.89  8.7994 9.17e-06 ***
+age_c            0.003998 0.003998     1   37.96  0.9485   0.3363    
+sex              0.010493 0.010493     1   38.83  2.4893   0.1227    
+model_type:age_c 0.016425 0.005475     3 1038.67  1.2989   0.2734    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Model 1: Combined (Reference: z_stacked )
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: correlation ~ model_type * age_c + sex + (1 | subj_id)
+   Data: melted_data
+
+REML criterion at convergence: -2680.7
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.9769 -0.5436 -0.1245  0.4237  6.6769 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ subj_id  (Intercept) 0.001136 0.03370 
+ Residual             0.004215 0.06492 
+Number of obs: 1071, groups:  subj_id, 40
+
+Fixed effects:
+                           Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)               7.076e-02  9.241e-03  5.515e+01   7.657 3.12e-10 ***
+model_typez_music        -2.895e-02  5.839e-03  1.037e+03  -4.958 8.33e-07 ***
+model_typez_mixed        -1.488e-02  5.697e-03  1.033e+03  -2.612  0.00912 ** 
+model_typez_speech       -7.164e-03  5.516e-03  1.041e+03  -1.299  0.19434    
+age_c                     1.306e-02  1.607e-02  6.260e+01   0.812  0.41963    
+sexM                      1.866e-02  1.183e-02  3.883e+01   1.578  0.12273    
+model_typez_music:age_c  -4.037e-03  1.332e-02  1.036e+03  -0.303  0.76181    
+model_typez_mixed:age_c   1.614e-02  1.315e-02  1.032e+03   1.227  0.21998    
+model_typez_speech:age_c -9.192e-03  1.300e-02  1.038e+03  -0.707  0.47966    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+              (Intr) mdl_typz_ms mdl_typz_mx mdl_typz_s age_c  sexM   mdl_typz_ms:_ mdl_typz_mx:_
+mdl_typz_ms   -0.287                                                                             
+mdl_typz_mx   -0.281  0.456                                                                      
+mdl_typz_sp   -0.299  0.456       0.477                                                          
+age_c         -0.083  0.069       0.062       0.060                                              
+sexM          -0.678  0.007      -0.006      -0.001      0.014                                   
+mdl_typz_ms:_  0.058 -0.192      -0.077      -0.070     -0.380 -0.010                            
+mdl_typz_mx:_  0.045 -0.077      -0.156      -0.075     -0.377  0.003  0.464                     
+mdl_typz_s:_   0.042 -0.066      -0.073      -0.153     -0.379  0.005  0.450         0.460       
+Type III Analysis of Variance Table with Satterthwaite's method
+                   Sum Sq  Mean Sq NumDF   DenDF F value   Pr(>F)    
+model_type       0.111269 0.037090     3 1040.49  8.7994 9.17e-06 ***
+age_c            0.003998 0.003998     1   37.96  0.9485   0.3363    
+sex              0.010493 0.010493     1   38.83  2.4893   0.1227    
+model_type:age_c 0.016425 0.005475     3 1038.48  1.2989   0.2734    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+============================================================
+REGION: HG 
+============================================================
+
+Model 1: Combined (Reference: z_speech )
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: correlation ~ model_type * age_c + sex + (1 | subj_id)
+   Data: melted_data
+
+REML criterion at convergence: -440.7
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.5827 -0.5925 -0.0593  0.4775  3.2819 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ subj_id  (Intercept) 0.01358  0.1165  
+ Residual             0.01094  0.1046  
+Number of obs: 327, groups:  subj_id, 27
+
+Fixed effects:
+                            Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)                 0.195945   0.036864  29.146510   5.315 1.04e-05 ***
+model_typez_mixed           0.007406   0.016748 295.995818   0.442  0.65867    
+model_typez_music          -0.094993   0.017530 295.981292  -5.419 1.24e-07 ***
+model_typez_stacked         0.018693   0.016465 295.133135   1.135  0.25715    
+age_c                       0.120376   0.066052  35.088082   1.822  0.07692 .  
+sexM                        0.016665   0.050918  25.183350   0.327  0.74616    
+model_typez_mixed:age_c    -0.006281   0.040892 296.204446  -0.154  0.87803    
+model_typez_music:age_c    -0.134634   0.042661 295.791878  -3.156  0.00176 ** 
+model_typez_stacked:age_c   0.018646   0.039677 294.910928   0.470  0.63875    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+              (Intr) mdl_typz_mx mdl_typz_ms mdl_typz_s age_c  sexM   mdl_typz_mx:_ mdl_typz_ms:_
+mdl_typz_mx   -0.209                                                                             
+mdl_typz_ms   -0.204  0.467                                                                      
+mdl_typz_st   -0.218  0.498       0.476                                                          
+age_c         -0.380  0.058       0.069       0.067                                              
+sexM          -0.710 -0.009      -0.013      -0.007      0.352                                   
+mdl_typz_mx:_  0.051 -0.214      -0.096      -0.109     -0.283 -0.009                            
+mdl_typz_ms:_  0.052 -0.098      -0.296      -0.106     -0.288  0.003  0.454                     
+mdl_typz_s:_   0.055 -0.110      -0.107      -0.214     -0.302 -0.004  0.492         0.472       
+Type III Analysis of Variance Table with Satterthwaite's method
+                  Sum Sq  Mean Sq NumDF   DenDF F value    Pr(>F)    
+model_type       0.56038 0.186794     3 295.565 17.0712 2.987e-10 ***
+age_c            0.02326 0.023264     1  26.613  2.1262  0.156505    
+sex              0.00117 0.001172     1  25.183  0.1071  0.746161    
+model_type:age_c 0.16833 0.056109     3 295.738  5.1278  0.001798 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Model 1: Combined (Reference: z_mixed )
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: correlation ~ model_type * age_c + sex + (1 | subj_id)
+   Data: melted_data
+
+REML criterion at convergence: -440.7
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.5827 -0.5925 -0.0593  0.4775  3.2819 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ subj_id  (Intercept) 0.01358  0.1165  
+ Residual             0.01094  0.1046  
+Number of obs: 327, groups:  subj_id, 27
+
+Fixed effects:
+                            Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)                 0.203352   0.037162  30.042473   5.472 6.12e-06 ***
+model_typez_speech         -0.007406   0.016748 295.995818  -0.442  0.65867    
+model_typez_music          -0.102399   0.017702 296.013721  -5.785 1.85e-08 ***
+model_typez_stacked         0.011287   0.016637 295.074417   0.678  0.49802    
+age_c                       0.114095   0.067136  37.154759   1.699  0.09759 .  
+sexM                        0.016665   0.050918  25.183350   0.327  0.74616    
+model_typez_speech:age_c    0.006281   0.040892 296.204446   0.154  0.87803    
+model_typez_music:age_c    -0.128353   0.043689 296.740841  -2.938  0.00356 ** 
+model_typez_stacked:age_c   0.024927   0.040631 295.670359   0.613  0.54002    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+              (Intr) mdl_typz_sp mdl_typz_m mdl_typz_st age_c  sexM   mdl_typz_sp:_ mdl_typz_m:_
+mdl_typz_sp   -0.243                                                                            
+mdl_typz_ms   -0.222  0.483                                                                     
+mdl_typz_st   -0.236  0.514       0.487                                                         
+age_c         -0.373  0.073       0.079      0.074                                              
+sexM          -0.708  0.009      -0.005      0.002       0.341                                  
+mdl_typz_sp:_  0.046 -0.214      -0.107     -0.108      -0.331  0.009                           
+mdl_typz_m:_   0.050 -0.105      -0.296     -0.107      -0.317  0.011  0.493                    
+mdl_typz_st:_  0.051 -0.108      -0.109     -0.207      -0.331  0.005  0.526         0.497      
+Type III Analysis of Variance Table with Satterthwaite's method
+                  Sum Sq  Mean Sq NumDF   DenDF F value    Pr(>F)    
+model_type       0.56038 0.186794     3 295.566 17.0712 2.987e-10 ***
+age_c            0.02326 0.023264     1  26.613  2.1262  0.156505    
+sex              0.00117 0.001172     1  25.183  0.1071  0.746161    
+model_type:age_c 0.16833 0.056109     3 295.735  5.1278  0.001798 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Model 1: Combined (Reference: z_music )
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: correlation ~ model_type * age_c + sex + (1 | subj_id)
+   Data: melted_data
+
+REML criterion at convergence: -440.7
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.5827 -0.5925 -0.0593  0.4775  3.2819 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ subj_id  (Intercept) 0.01358  0.1165  
+ Residual             0.01094  0.1046  
+Number of obs: 327, groups:  subj_id, 27
+
+Fixed effects:
+                           Estimate Std. Error        df t value Pr(>|t|)    
+(Intercept)                 0.10095    0.03745  31.00137   2.696 0.011247 *  
+model_typez_mixed           0.10240    0.01770 296.01372   5.785 1.85e-08 ***
+model_typez_speech          0.09499    0.01753 295.98129   5.419 1.24e-07 ***
+model_typez_stacked         0.11369    0.01742 295.27925   6.527 2.93e-10 ***
+age_c                      -0.01426    0.06751  38.26054  -0.211 0.833837    
+sexM                        0.01666    0.05092  25.18335   0.327 0.746161    
+model_typez_mixed:age_c     0.12835    0.04369 296.74084   2.938 0.003564 ** 
+model_typez_speech:age_c    0.13463    0.04266 295.79188   3.156 0.001765 ** 
+model_typez_stacked:age_c   0.15328    0.04238 295.26403   3.617 0.000351 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+              (Intr) mdl_typz_m mdl_typz_sp mdl_typz_st age_c  sexM   mdl_typz_m:_ mdl_typz_sp:_
+mdl_typz_mx   -0.253                                                                            
+mdl_typz_sp   -0.267  0.548                                                                     
+mdl_typz_st   -0.261  0.551      0.556                                                          
+age_c         -0.389  0.113      0.119       0.119                                              
+sexM          -0.705  0.005      0.013       0.006       0.346                                  
+mdl_typz_m:_   0.090 -0.296     -0.199      -0.199      -0.332 -0.011                           
+mdl_typz_sp:_  0.087 -0.200     -0.296      -0.198      -0.350 -0.003  0.552                    
+mdl_typz_st:_  0.092 -0.200     -0.198      -0.288      -0.350 -0.006  0.555        0.565       
+Type III Analysis of Variance Table with Satterthwaite's method
+                  Sum Sq  Mean Sq NumDF   DenDF F value    Pr(>F)    
+model_type       0.56038 0.186794     3 295.565 17.0712 2.987e-10 ***
+age_c            0.02326 0.023264     1  26.613  2.1262  0.156505    
+sex              0.00117 0.001172     1  25.183  0.1071  0.746161    
+model_type:age_c 0.16833 0.056109     3 295.736  5.1278  0.001798 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Model 1: Combined (Reference: z_stacked )
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: correlation ~ model_type * age_c + sex + (1 | subj_id)
+   Data: melted_data
+
+REML criterion at convergence: -440.7
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.5827 -0.5925 -0.0593  0.4775  3.2819 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ subj_id  (Intercept) 0.01358  0.1165  
+ Residual             0.01094  0.1046  
+Number of obs: 327, groups:  subj_id, 27
+
+Fixed effects:
+                          Estimate Std. Error        df t value Pr(>|t|)    
+(Intercept)                0.21464    0.03695  29.41395   5.808 2.56e-06 ***
+model_typez_music         -0.11369    0.01742 295.27925  -6.527 2.93e-10 ***
+model_typez_mixed         -0.01129    0.01664 295.07442  -0.678 0.498020    
+model_typez_speech        -0.01869    0.01646 295.13313  -1.135 0.257153    
+age_c                      0.13902    0.06597  34.91462   2.107 0.042351 *  
+sexM                       0.01666    0.05092  25.18335   0.327 0.746161    
+model_typez_music:age_c   -0.15328    0.04238 295.26403  -3.617 0.000351 ***
+model_typez_mixed:age_c   -0.02493    0.04063 295.67036  -0.613 0.540018    
+model_typez_speech:age_c  -0.01865    0.03968 294.91093  -0.470 0.638746    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+              (Intr) mdl_typz_ms mdl_typz_mx mdl_typz_s age_c  sexM   mdl_typz_ms:_ mdl_typz_mx:_
+mdl_typz_ms   -0.207                                                                             
+mdl_typz_mx   -0.213  0.460                                                                      
+mdl_typz_sp   -0.228  0.466       0.488                                                          
+age_c         -0.374  0.063       0.052       0.061                                              
+sexM          -0.711 -0.006      -0.002       0.007      0.350                                   
+mdl_typz_ms:_  0.043 -0.288      -0.088      -0.094     -0.285  0.006                            
+mdl_typz_mx:_  0.042 -0.086      -0.207      -0.100     -0.279 -0.005  0.447                     
+mdl_typz_s:_   0.041 -0.095      -0.101      -0.214     -0.299  0.004  0.461         0.482       
+Type III Analysis of Variance Table with Satterthwaite's method
+                  Sum Sq  Mean Sq NumDF   DenDF F value    Pr(>F)    
+model_type       0.56038 0.186794     3 295.563 17.0712 2.987e-10 ***
+age_c            0.02326 0.023264     1  26.613  2.1262  0.156505    
+sex              0.00117 0.001172     1  25.183  0.1071  0.746161    
+model_type:age_c 0.16833 0.056109     3 295.735  5.1278  0.001798 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+============================================================
+REGION: PP 
+============================================================
+
+Model 1: Combined (Reference: z_speech )
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: correlation ~ model_type * age_c + sex + (1 | subj_id)
+   Data: melted_data
+
+REML criterion at convergence: -155
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.4496 -0.4045  0.0227  0.4051  3.4664 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ subj_id  (Intercept) 0.004778 0.06912 
+ Residual             0.004006 0.06329 
+Number of obs: 80, groups:  subj_id, 9
+
+Fixed effects:
+                           Estimate Std. Error        df t value Pr(>|t|)  
+(Intercept)                0.112600   0.039142  7.347987   2.877   0.0226 *
+model_typez_mixed          0.016001   0.020899 66.185945   0.766   0.4466  
+model_typez_music         -0.030406   0.021027 66.256203  -1.446   0.1529  
+model_typez_stacked        0.026047   0.020697 66.214082   1.258   0.2126  
+age_c                      0.054905   0.051935  8.393021   1.057   0.3199  
+sexM                       0.038214   0.049490  6.279238   0.772   0.4681  
+model_typez_mixed:age_c    0.007217   0.035592 65.942580   0.203   0.8399  
+model_typez_music:age_c   -0.036205   0.035614 65.936753  -1.017   0.3131  
+model_typez_stacked:age_c -0.029348   0.035570 65.941724  -0.825   0.4123  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+              (Intr) mdl_typz_mx mdl_typz_ms mdl_typz_s age_c  sexM   mdl_typz_mx:_ mdl_typz_ms:_
+mdl_typz_mx   -0.227                                                                             
+mdl_typz_ms   -0.227  0.484                                                                      
+mdl_typz_st   -0.227  0.493       0.491                                                          
+age_c          0.208 -0.111      -0.109      -0.111                                              
+sexM          -0.696 -0.025      -0.023      -0.029      0.006                                   
+mdl_typz_mx:_ -0.101  0.255       0.132       0.134     -0.324  0.026                            
+mdl_typz_ms:_ -0.102  0.132       0.267       0.133     -0.324  0.028  0.497                     
+mdl_typz_s:_  -0.101  0.133       0.131       0.262     -0.325  0.027  0.497         0.497       
+Type III Analysis of Variance Table with Satterthwaite's method
+                   Sum Sq   Mean Sq NumDF  DenDF F value Pr(>F)  
+model_type       0.032682 0.0108940     3 65.842  2.7195 0.0515 .
+age_c            0.002867 0.0028672     1  5.944  0.7157 0.4303  
+sex              0.002388 0.0023885     1  6.279  0.5962 0.4681  
+model_type:age_c 0.008645 0.0028818     3 65.685  0.7194 0.5440  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Model 1: Combined (Reference: z_mixed )
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: correlation ~ model_type * age_c + sex + (1 | subj_id)
+   Data: melted_data
+
+REML criterion at convergence: -155
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.4496 -0.4045  0.0227  0.4051  3.4664 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ subj_id  (Intercept) 0.004778 0.06912 
+ Residual             0.004006 0.06329 
+Number of obs: 80, groups:  subj_id, 9
+
+Fixed effects:
+                           Estimate Std. Error        df t value Pr(>|t|)  
+(Intercept)                0.128601   0.039969  7.853283   3.217   0.0126 *
+model_typez_speech        -0.016001   0.020899 66.185945  -0.766   0.4466  
+model_typez_music         -0.046406   0.021286 65.507369  -2.180   0.0328 *
+model_typez_stacked        0.010046   0.020954 65.450308   0.479   0.6332  
+age_c                      0.062121   0.052584  8.732573   1.181   0.2686  
+sexM                       0.038214   0.049490  6.279238   0.772   0.4681  
+model_typez_speech:age_c  -0.007217   0.035592 65.942580  -0.203   0.8399  
+model_typez_music:age_c   -0.043422   0.035720 65.436897  -1.216   0.2285  
+model_typez_stacked:age_c -0.036565   0.035678 65.434649  -1.025   0.3092  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+              (Intr) mdl_typz_sp mdl_typz_m mdl_typz_st age_c  sexM   mdl_typz_sp:_ mdl_typz_m:_
+mdl_typz_sp   -0.301                                                                            
+mdl_typz_ms   -0.264  0.503                                                                     
+mdl_typz_st   -0.265  0.511       0.504                                                         
+age_c          0.167 -0.063      -0.080     -0.082                                              
+sexM          -0.695  0.025       0.002     -0.003       0.023                                  
+mdl_typz_sp:_ -0.035  0.255       0.120      0.122      -0.357 -0.026                           
+mdl_typz_m:_  -0.065  0.122       0.253      0.121      -0.339  0.002  0.501                    
+mdl_typz_st:_ -0.064  0.122       0.119      0.248      -0.340  0.001  0.502         0.500      
+Type III Analysis of Variance Table with Satterthwaite's method
+                   Sum Sq   Mean Sq NumDF  DenDF F value Pr(>F)  
+model_type       0.032682 0.0108940     3 65.853  2.7195 0.0515 .
+age_c            0.002867 0.0028672     1  5.944  0.7157 0.4303  
+sex              0.002388 0.0023885     1  6.279  0.5962 0.4681  
+model_type:age_c 0.008645 0.0028818     3 65.687  0.7194 0.5440  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Model 1: Combined (Reference: z_music )
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: correlation ~ model_type * age_c + sex + (1 | subj_id)
+   Data: melted_data
+
+REML criterion at convergence: -155
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.4496 -0.4045  0.0227  0.4051  3.4664 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ subj_id  (Intercept) 0.004778 0.06912 
+ Residual             0.004006 0.06329 
+Number of obs: 80, groups:  subj_id, 9
+
+Fixed effects:
+                           Estimate Std. Error        df t value Pr(>|t|)   
+(Intercept)                0.082195   0.040010  7.881515   2.054  0.07453 . 
+model_typez_mixed          0.046406   0.021286 65.507369   2.180  0.03285 * 
+model_typez_speech         0.030406   0.021027 66.256203   1.446  0.15288   
+model_typez_stacked        0.056452   0.021041 65.476895   2.683  0.00923 **
+age_c                      0.018699   0.052596  8.743069   0.356  0.73062   
+sexM                       0.038214   0.049490  6.279238   0.772  0.46808   
+model_typez_mixed:age_c    0.043422   0.035720 65.436897   1.216  0.22851   
+model_typez_speech:age_c   0.036205   0.035614 65.936753   1.017  0.31306   
+model_typez_stacked:age_c  0.006857   0.035695 65.436945   0.192  0.84826   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+              (Intr) mdl_typz_m mdl_typz_sp mdl_typz_st age_c  sexM   mdl_typz_m:_ mdl_typz_sp:_
+mdl_typz_mx   -0.268                                                                            
+mdl_typz_sp   -0.304  0.512                                                                     
+mdl_typz_st   -0.268  0.510      0.516                                                          
+age_c          0.171 -0.091     -0.073      -0.092                                              
+sexM          -0.693 -0.002      0.023      -0.006       0.025                                  
+mdl_typz_m:_  -0.069  0.253      0.135       0.135      -0.340 -0.002                           
+mdl_typz_sp:_ -0.040  0.133      0.267       0.135      -0.357 -0.028  0.502                    
+mdl_typz_st:_ -0.070  0.134      0.135       0.262      -0.340 -0.002  0.501        0.502       
+Type III Analysis of Variance Table with Satterthwaite's method
+                   Sum Sq   Mean Sq NumDF  DenDF F value Pr(>F)  
+model_type       0.032682 0.0108940     3 65.852  2.7195 0.0515 .
+age_c            0.002867 0.0028672     1  5.944  0.7157 0.4303  
+sex              0.002388 0.0023885     1  6.279  0.5962 0.4681  
+model_type:age_c 0.008645 0.0028818     3 65.687  0.7194 0.5440  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Model 1: Combined (Reference: z_stacked )
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: correlation ~ model_type * age_c + sex + (1 | subj_id)
+   Data: melted_data
+
+REML criterion at convergence: -155
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.4496 -0.4045  0.0227  0.4051  3.4664 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ subj_id  (Intercept) 0.004778 0.06912 
+ Residual             0.004006 0.06329 
+Number of obs: 80, groups:  subj_id, 9
+
+Fixed effects:
+                          Estimate Std. Error        df t value Pr(>|t|)   
+(Intercept)               0.138647   0.039904  7.803882   3.475  0.00872 **
+model_typez_music        -0.056452   0.021041 65.476895  -2.683  0.00923 **
+model_typez_mixed        -0.010046   0.020954 65.450308  -0.479  0.63322   
+model_typez_speech       -0.026047   0.020697 66.214082  -1.258  0.21264   
+age_c                     0.025556   0.052564  8.721034   0.486  0.63881   
+sexM                      0.038214   0.049490  6.279238   0.772  0.46808   
+model_typez_music:age_c  -0.006857   0.035695 65.436945  -0.192  0.84826   
+model_typez_mixed:age_c   0.036565   0.035678 65.434649   1.025  0.30921   
+model_typez_speech:age_c  0.029348   0.035570 65.941724   0.825  0.41230   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+              (Intr) mdl_typz_ms mdl_typz_mx mdl_typz_s age_c  sexM   mdl_typz_ms:_ mdl_typz_mx:_
+mdl_typz_ms   -0.259                                                                             
+mdl_typz_mx   -0.259  0.486                                                                      
+mdl_typz_sp   -0.296  0.493       0.497                                                          
+age_c          0.169 -0.086      -0.086      -0.068                                              
+sexM          -0.698  0.006       0.003       0.029      0.024                                   
+mdl_typz_ms:_ -0.068  0.262       0.127       0.129     -0.339  0.002                            
+mdl_typz_mx:_ -0.066  0.127       0.248       0.128     -0.339 -0.001  0.499                     
+mdl_typz_s:_  -0.037  0.127       0.127       0.262     -0.356 -0.027  0.501         0.501       
+Type III Analysis of Variance Table with Satterthwaite's method
+                   Sum Sq   Mean Sq NumDF  DenDF F value Pr(>F)  
+model_type       0.032682 0.0108940     3 65.848  2.7195 0.0515 .
+age_c            0.002867 0.0028672     1  5.944  0.7157 0.4303  
+sex              0.002388 0.0023885     1  6.279  0.5962 0.4681  
+model_type:age_c 0.008645 0.0028818     3 65.687  0.7194 0.5440  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+
+============================================================
+REGION: PT 
+============================================================
+
+Model 1: Combined (Reference: z_speech )
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: correlation ~ model_type * age_c + sex + (1 | subj_id)
+   Data: melted_data
+
+REML criterion at convergence: -259.4
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.7374 -0.4922 -0.1643  0.4380  2.9263 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ subj_id  (Intercept) 0.011062 0.10517 
+ Residual             0.005978 0.07731 
+Number of obs: 148, groups:  subj_id, 15
+
+Fixed effects:
+                            Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)                1.390e-01  3.572e-02  1.318e+01   3.892 0.001811 ** 
+model_typez_mixed         -1.795e-02  1.799e-02  1.263e+02  -0.998 0.320358    
+model_typez_music         -6.666e-02  1.884e-02  1.265e+02  -3.539 0.000563 ***
+model_typez_stacked        9.108e-03  1.782e-02  1.261e+02   0.511 0.610244    
+age_c                      9.790e-02  8.388e-02  1.351e+01   1.167 0.263303    
+sexM                       4.227e-02  6.338e-02  1.085e+01   0.667 0.518728    
+model_typez_mixed:age_c    1.153e-04  4.753e-02  1.264e+02   0.002 0.998068    
+model_typez_music:age_c   -4.055e-02  5.138e-02  1.268e+02  -0.789 0.431430    
+model_typez_stacked:age_c  4.621e-02  4.641e-02  1.261e+02   0.996 0.321367    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+              (Intr) mdl_typz_mx mdl_typz_ms mdl_typz_s age_c  sexM   mdl_typz_mx:_ mdl_typz_ms:_
+mdl_typz_mx   -0.247                                                                             
+mdl_typz_ms   -0.235  0.484                                                                      
+mdl_typz_st   -0.249  0.497       0.481                                                          
+age_c         -0.237  0.012       0.021       0.011                                              
+sexM          -0.487 -0.002      -0.009       0.000      0.038                                   
+mdl_typz_mx:_  0.008 -0.095      -0.033      -0.018     -0.266  0.005                            
+mdl_typz_ms:_  0.015 -0.032      -0.164      -0.024     -0.251  0.005  0.454                     
+mdl_typz_s:_   0.009 -0.018      -0.025      -0.067     -0.272  0.002  0.481         0.456       
+Type III Analysis of Variance Table with Satterthwaite's method
+                   Sum Sq  Mean Sq NumDF   DenDF F value    Pr(>F)    
+model_type       0.112909 0.037636     3 126.252  6.2963 0.0005141 ***
+age_c            0.009392 0.009392     1  10.761  1.5712 0.2365795    
+sex              0.002659 0.002659     1  10.849  0.4448 0.5187277    
+model_type:age_c 0.017680 0.005893     3 126.393  0.9859 0.4017142    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Model 1: Combined (Reference: z_mixed )
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: correlation ~ model_type * age_c + sex + (1 | subj_id)
+   Data: melted_data
+
+REML criterion at convergence: -259.4
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.7374 -0.4922 -0.1643  0.4380  2.9263 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ subj_id  (Intercept) 0.011062 0.10517 
+ Residual             0.005978 0.07731 
+Number of obs: 148, groups:  subj_id, 15
+
+Fixed effects:
+                            Estimate Std. Error         df t value Pr(>|t|)   
+(Intercept)                1.211e-01  3.581e-02  1.331e+01   3.380  0.00478 **
+model_typez_speech         1.795e-02  1.799e-02  1.263e+02   0.998  0.32036   
+model_typez_music         -4.871e-02  1.872e-02  1.263e+02  -2.603  0.01036 * 
+model_typez_stacked        2.705e-02  1.796e-02  1.262e+02   1.506  0.13444   
+age_c                      9.802e-02  8.469e-02  1.403e+01   1.157  0.26641   
+sexM                       4.227e-02  6.338e-02  1.085e+01   0.667  0.51873   
+model_typez_speech:age_c  -1.153e-04  4.753e-02  1.264e+02  -0.002  0.99807   
+model_typez_music:age_c   -4.067e-02  5.178e-02  1.265e+02  -0.785  0.43370   
+model_typez_stacked:age_c  4.609e-02  4.786e-02  1.263e+02   0.963  0.33735   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+              (Intr) mdl_typz_sp mdl_typz_m mdl_typz_st age_c  sexM   mdl_typz_sp:_ mdl_typz_m:_
+mdl_typz_sp   -0.256                                                                            
+mdl_typz_ms   -0.238  0.474                                                                     
+mdl_typz_st   -0.256  0.508       0.481                                                         
+age_c         -0.250  0.041       0.042      0.043                                              
+sexM          -0.487  0.002      -0.007      0.002       0.040                                  
+mdl_typz_sp:_  0.040 -0.095      -0.058     -0.077      -0.298 -0.005                           
+mdl_typz_m:_   0.035 -0.055      -0.186     -0.062      -0.267  0.000  0.467                    
+mdl_typz_st:_  0.040 -0.076      -0.065     -0.123      -0.295 -0.003  0.526         0.474      
+Type III Analysis of Variance Table with Satterthwaite's method
+                   Sum Sq  Mean Sq NumDF   DenDF F value    Pr(>F)    
+model_type       0.112909 0.037636     3 126.252  6.2963 0.0005141 ***
+age_c            0.009392 0.009392     1  10.761  1.5712 0.2365795    
+sex              0.002659 0.002659     1  10.849  0.4448 0.5187277    
+model_type:age_c 0.017680 0.005893     3 126.392  0.9859 0.4017142    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Model 1: Combined (Reference: z_music )
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: correlation ~ model_type * age_c + sex + (1 | subj_id)
+   Data: melted_data
+
+REML criterion at convergence: -259.4
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.7374 -0.4922 -0.1643  0.4380  2.9263 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ subj_id  (Intercept) 0.011062 0.10517 
+ Residual             0.005978 0.07731 
+Number of obs: 148, groups:  subj_id, 15
+
+Fixed effects:
+                           Estimate Std. Error        df t value Pr(>|t|)    
+(Intercept)                 0.07234    0.03625  13.96114   1.996 0.065846 .  
+model_typez_mixed           0.04871    0.01872 126.27752   2.603 0.010356 *  
+model_typez_speech          0.06666    0.01884 126.47658   3.539 0.000563 ***
+model_typez_stacked         0.07577    0.01870 126.26971   4.051 8.84e-05 ***
+age_c                       0.05735    0.08667  15.35549   0.662 0.517935    
+sexM                        0.04227    0.06338  10.84904   0.667 0.518728    
+model_typez_mixed:age_c     0.04067    0.05178 126.50702   0.785 0.433698    
+model_typez_speech:age_c    0.04055    0.05138 126.75075   0.789 0.431430    
+model_typez_stacked:age_c   0.08676    0.05119 126.45542   1.695 0.092571 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+              (Intr) mdl_typz_m mdl_typz_sp mdl_typz_st age_c  sexM   mdl_typz_m:_ mdl_typz_sp:_
+mdl_typz_mx   -0.281                                                                            
+mdl_typz_sp   -0.288  0.541                                                                     
+mdl_typz_st   -0.286  0.539      0.549                                                          
+age_c         -0.257  0.071      0.077       0.075                                              
+sexM          -0.484  0.007      0.009       0.008       0.039                                  
+mdl_typz_m:_   0.062 -0.186     -0.133      -0.127      -0.337  0.000                           
+mdl_typz_sp:_  0.071 -0.134     -0.164      -0.142      -0.350 -0.005  0.575                    
+mdl_typz_st:_  0.067 -0.127     -0.142      -0.178      -0.345 -0.003  0.568        0.590       
+Type III Analysis of Variance Table with Satterthwaite's method
+                   Sum Sq  Mean Sq NumDF   DenDF F value    Pr(>F)    
+model_type       0.112909 0.037636     3 126.252  6.2963 0.0005141 ***
+age_c            0.009392 0.009392     1  10.761  1.5712 0.2365795    
+sex              0.002659 0.002659     1  10.849  0.4448 0.5187277    
+model_type:age_c 0.017680 0.005893     3 126.392  0.9859 0.4017142    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Model 1: Combined (Reference: z_stacked )
+Linear mixed model fit by REML. t-tests use Satterthwaite's method ['lmerModLmerTest']
+Formula: correlation ~ model_type * age_c + sex + (1 | subj_id)
+   Data: melted_data
+
+REML criterion at convergence: -259.4
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-2.7374 -0.4922 -0.1643  0.4380  2.9263 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ subj_id  (Intercept) 0.011062 0.10517 
+ Residual             0.005978 0.07731 
+Number of obs: 148, groups:  subj_id, 15
+
+Fixed effects:
+                           Estimate Std. Error         df t value Pr(>|t|)    
+(Intercept)                0.148107   0.035721  13.185329   4.146  0.00112 ** 
+model_typez_music         -0.075768   0.018703 126.269713  -4.051 8.84e-05 ***
+model_typez_mixed         -0.027054   0.017958 126.187978  -1.506  0.13444    
+model_typez_speech        -0.009108   0.017825 126.060912  -0.511  0.61024    
+age_c                      0.144110   0.084076  13.643451   1.714  0.10914    
+sexM                       0.042272   0.063379  10.849044   0.667  0.51873    
+model_typez_music:age_c   -0.086756   0.051189 126.455421  -1.695  0.09257 .  
+model_typez_mixed:age_c   -0.046091   0.047858 126.274089  -0.963  0.33735    
+model_typez_speech:age_c  -0.046206   0.046412 126.088124  -0.996  0.32137    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Correlation of Fixed Effects:
+              (Intr) mdl_typz_ms mdl_typz_mx mdl_typz_s age_c  sexM   mdl_typz_ms:_ mdl_typz_mx:_
+mdl_typz_ms   -0.234                                                                             
+mdl_typz_mx   -0.246  0.479                                                                      
+mdl_typz_sp   -0.250  0.469       0.495                                                          
+age_c         -0.244  0.031       0.027       0.025                                              
+sexM          -0.487 -0.008      -0.002       0.000      0.039                                   
+mdl_typz_ms:_  0.025 -0.178      -0.052      -0.037     -0.253  0.003                            
+mdl_typz_mx:_  0.022 -0.053      -0.123      -0.047     -0.272  0.003  0.455                     
+mdl_typz_s:_   0.024 -0.038      -0.048      -0.067     -0.280 -0.002  0.449         0.492       
+Type III Analysis of Variance Table with Satterthwaite's method
+                   Sum Sq  Mean Sq NumDF   DenDF F value    Pr(>F)    
+model_type       0.112909 0.037636     3 126.252  6.2963 0.0005141 ***
+age_c            0.009392 0.009392     1  10.761  1.5712 0.2365795    
+sex              0.002659 0.002659     1  10.849  0.4448 0.5187277    
+model_type:age_c 0.017680 0.005893     3 126.392  0.9859 0.4017142    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+

@@ -15,14 +15,14 @@ This repository contains code for preprocessing intracranial sEEG recordings, fi
   Audio stimuli (movie trailers) are commercially licensed and cannot be redistributed. Separated speech and music streams were derived post-hoc using Moises.
 
 **Dependencies:**
-  Python:
-  numpy, scipy, pandas, matplotlib, h5py,
-  librosa (audio processing),
-  pyvista, nibabel (brain surface visualization),
-  mplcursors (interactive scatter plots). 
-  R:
-  lme4, lmerTest (linear mixed-effects models),
-  ggplot2, ggeffects, patchwork (visualization),
-  readxl, dplyr, tidyr (data wrangling). 
+  Python (3.8.3):
+  numpy (1.24.4), scipy (1.10.1), pandas (2.0.3), matplotlib (3.7.5), h5py (3.10.0),
+  librosa (audio processing; 0.10.2),
+  pyvista (0.44.2), nibabel (brain surface visualization; 5.2.1),
+  mplcursors (interactive scatter plots; 0.6). 
+  R (4.4.1):
+  lme4 (1.1.38), lmerTest (linear mixed-effects models; 3.2.0),
+  ggplot2 (4.0.2), ggeffects (2.3.2), patchwork (visualization; 1.3.2),
+  readxl (1.4.5), dplyr (1.2.0), tidyr (data wrangling; 1.3.2). 
   Ridge regression utilities (ridge_.py, utils.py) are from the MNE-Python-based Hamilton Lab ridge regression toolbox.
 

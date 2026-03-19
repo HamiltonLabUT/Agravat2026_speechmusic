@@ -6,7 +6,7 @@ Code for Agravat et al., 2026. Human auditory cortex preferentially tracks speec
 
 ## Overview
 
-This repository contains code for **preprocessing intracranial sEEG recordings**, **fitting spectrotemporal receptive field (STRF) encoding models**, and **generating all figures and statistical analyses** from Agravat et al., 2026. Participants (ages 4–21, n=54) listened passively to naturalistic movie trailer clips containing overlapping speech and music. Audio was post-hoc separated into isolated speech and music streams using deep neural networks ([Moises](https://moises.ai)). STRF encoding models were fit to predict high-gamma neural activity (70–150 Hz) from four conditions: `mixed`, `speech-separated`, `music-separated`, and `stacked` (speech + music).
+This repository contains code for preprocessing intracranial sEEG recordings, fitting spectrotemporal receptive field (STRF) encoding models, and generating all figures and statistical analyses from Agravat et al., 2026. Participants (ages 4–21, n=54) listened passively to naturalistic movie trailer clips containing overlapping speech and music. Audio was post-hoc separated into isolated speech and music streams using deep neural networks ([Moises](https://moises.ai)). STRF encoding models were fit to predict high-gamma neural activity (70–150 Hz) from four conditions: `mixed`, `speech-separated`, `music-separated`, and `stacked` (speech + music).
 
 ## Usage
 

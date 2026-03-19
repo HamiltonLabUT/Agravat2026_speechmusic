@@ -4,7 +4,11 @@
 This repository contains code for preprocessing intracranial sEEG recordings, fitting spectrotemporal receptive field (STRF) encoding models, and generating all figures and statistical analyses. Participants (ages 4–21, n=54) listened passively to naturalistic movie trailer clips containing overlapping speech and music. Audio was post-hoc separated into isolated speech and music streams using deep neural networks (Moises). STRF encoding models were fit to predict high-gamma neural activity (70–150 Hz) from four conditions: mixed, speech-separated, music-separated, and stacked (speech + music).
 
 ### **Usage:**  
-  1. Preprocess neural data and create h5 files (preproc/preproc_og/ECoG_create_h5_functions_mixed.py; preproc/ECoG_create_h5_functions_speechmusic.py)
+  1. Preprocess neural data and create h5 files 
+  ```python
+preproc/preproc_og/ECoG_create_h5_functions_mixed.py      # mixed audio
+preproc/ECoG_create_h5_functions_speechmusic.py           # separated speech/music
+```
   2. Fit STRF encoding models (analysis/fit_strfs/fit_STRF_mixed.py; fit_STRF_speechmusic.py; fit_STRF_stacked.py). Each fit_STRF script saves an HDF5 file containing STRF weights, per-electrode prediction correlations, and optimal ridge regularization parameters. 
   3. Aggregate results into CSV (analysis/plotting/DNN_analysis/make_allmodels_csv.py). make_allmodels_csv.py outputs a single CSV with one row per elcetrode containing prediction correlations for all four model conditions (mixed, speech-separated, music-separated, stacked), along with electrode metadata (subject ID, channelnames, ROI, age, MNI coordinates). A previously generated csv is added to the repository. 
   4. Run statistical analyses (analysis/stats/fig4.R; musical_training_LMER.R; musical_training_Mann_Whitney_U_Test.R)

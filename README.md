@@ -3,7 +3,6 @@
 
 [![Python](https://img.shields.io/badge/Python-3.8.3-blue?logo=python&logoColor=white)](https://www.python.org/)
 [![R](https://img.shields.io/badge/R-4.4.1-276DC3?logo=r&logoColor=white)](https://www.r-project.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![bioRxiv](https://img.shields.io/badge/bioRxiv-2026.03.12.710296-red)](https://doi.org/10.64898/2026.03.12.710296)
 
 ---

@@ -26,3 +26,4 @@ This repository contains code for preprocessing intracranial sEEG recordings, fi
   readxl (1.4.5), dplyr (1.2.0), tidyr (data wrangling; 1.3.2). 
   Ridge regression utilities (ridge_.py, utils.py) are from the MNE-Python-based Hamilton Lab ridge regression toolbox.
 
+If you use this code, please cite: Agravat, R., Desai, M., Field, A. M., Georges, S., Leisawitz, J., Foox, G., Asghar, S., Clarke, D., Tyler-Kabara, E. C., Iqbal, M. O., Watrous, A. J., Anderson, A. E., Weiner, H. L., & Hamilton, L. S. (2026). Human auditory cortex preferentially tracks speech over music without explicit attention. In bioRxiv (p. 2026.03.12.710296). bioRxiv. https://doi.org/10.64898/2026.03.12.710296
